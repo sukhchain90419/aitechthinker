@@ -2,13 +2,9 @@
 
 import "./globals.css";
 import Link from "next/link";
+import Head from "next/head";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-
-export const metadata = {
-  title: "AI Tech Thinker",
-  description: "Arduino, AI, Coding, Web & App Development Tutorials",
-};
 
 export default function RootLayout({
   children,
@@ -47,12 +43,22 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth">
+      <Head>
+        <title>AI Tech Thinker</title>
+        <meta
+          name="description"
+          content="Arduino, AI, Coding, Web & App Development Tutorials"
+        />
+      </Head>
       <body className="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex flex-col min-h-screen transition-colors duration-300">
         {/* Navbar */}
         <header className="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
           <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             {/* Logo */}
-            <Link href="/" className="text-2xl font-bold text-blue-700 dark:text-blue-400">
+            <Link
+              href="/"
+              className="text-2xl font-bold text-blue-700 dark:text-blue-400"
+            >
               AI Tech Thinker
             </Link>
 
@@ -63,7 +69,9 @@ export default function RootLayout({
                   key={link.href}
                   href={link.href}
                   className={`hover:text-blue-600 dark:hover:text-blue-400 ${
-                    pathname === link.href ? "text-blue-600 dark:text-blue-400 font-semibold" : ""
+                    pathname === link.href
+                      ? "text-blue-600 dark:text-blue-400 font-semibold"
+                      : ""
                   }`}
                 >
                   {link.label}
@@ -97,7 +105,9 @@ export default function RootLayout({
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
                   className={`block hover:text-blue-600 dark:hover:text-blue-400 ${
-                    pathname === link.href ? "text-blue-600 dark:text-blue-400 font-semibold" : ""
+                    pathname === link.href
+                      ? "text-blue-600 dark:text-blue-400 font-semibold"
+                      : ""
                   }`}
                 >
                   {link.label}
@@ -122,7 +132,9 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
             {/* About */}
             <div>
-              <h3 className="text-lg font-semibold text-white mb-3">AI Tech Thinker</h3>
+              <h3 className="text-lg font-semibold text-white mb-3">
+                AI Tech Thinker
+              </h3>
               <p className="text-sm leading-relaxed">
                 Learn Arduino, Coding, AI, Web & App Development with tutorials
                 and projects made simple.
@@ -131,7 +143,9 @@ export default function RootLayout({
 
             {/* Quick Links */}
             <div>
-              <h3 className="text-lg font-semibold text-white mb-3">Quick Links</h3>
+              <h3 className="text-lg font-semibold text-white mb-3">
+                Quick Links
+              </h3>
               <ul className="space-y-2 text-sm">
                 {navLinks.map((link) => (
                   <li key={link.href}>
@@ -145,12 +159,22 @@ export default function RootLayout({
 
             {/* Social Links */}
             <div>
-              <h3 className="text-lg font-semibold text-white mb-3">Follow Us</h3>
+              <h3 className="text-lg font-semibold text-white mb-3">
+                Follow Us
+              </h3>
               <div className="flex space-x-4 text-lg">
-                <a href="#" target="_blank" className="hover:text-blue-400">🌐</a>
-                <a href="#" target="_blank" className="hover:text-red-500">📺</a>
-                <a href="#" target="_blank" className="hover:text-sky-400">🐦</a>
-                <a href="#" target="_blank" className="hover:text-blue-600">📘</a>
+                <a href="#" target="_blank" className="hover:text-blue-400">
+                  🌐
+                </a>
+                <a href="#" target="_blank" className="hover:text-red-500">
+                  📺
+                </a>
+                <a href="#" target="_blank" className="hover:text-sky-400">
+                  🐦
+                </a>
+                <a href="#" target="_blank" className="hover:text-blue-600">
+                  📘
+                </a>
               </div>
             </div>
           </div>
